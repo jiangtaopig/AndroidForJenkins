@@ -18,14 +18,14 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file('../keystore/keystore.jks')//签名文件路径
+            storeFile file('D:\\TestDemo\\keystore\\keystore.jks')//签名文件路径
             storePassword "zhu123456"
             keyAlias "key0"
             keyPassword "zhu123456"  //签名密码
             println("====== signingConfigs.debug ======")
         }
         release {
-            storeFile file('../keystore/keystore.jks')//签名文件路径
+            storeFile file('D:\\TestDemo\\keystore\\keystore.jks')//签名文件路径
             storePassword "zhu123456"
             keyAlias "key0"
             keyPassword "zhu123456"  //签名密码
