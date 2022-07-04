@@ -34,15 +34,19 @@ android {
     }
 
     buildTypes {
+        debug {
+            println("====== buildTypes.debug ======")
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
             applicationVariants.all {
                 variant ->
                     variant.outputs.all { output ->
-                        outputFileName = "ApkName_${variant.name}_v${variant.versionName}_${releaseTime()}.apk"
+                        outputFileName = "FirstTest_${variant.name}_v${variant.versionName}_${releaseTime()}.apk"
                     }
             }
         }
