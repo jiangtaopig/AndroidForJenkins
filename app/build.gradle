@@ -37,6 +37,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+            applicationVariants.all {
+                variant ->
+                    variant.outputs.all { output ->
+                        outputFileName = "ApkName_${variant.name}_v${variant.versionName}_${releaseTime()}.apk"
+                    }
+            }
         }
     }
     compileOptions {
@@ -46,6 +54,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+}
+
+def releaseTime() {
+    // return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC")) //年月日
+    return new Date().format("yyyyMMdd HH-mm-ss", TimeZone.getTimeZone("GMT+8:00")) //年月日时分秒
 }
 
 dependencies {
