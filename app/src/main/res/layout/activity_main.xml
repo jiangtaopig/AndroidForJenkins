@@ -23,6 +23,6 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1234555"/>
+        android:text="1234555/ branch>> dev/test1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
