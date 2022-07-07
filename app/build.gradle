@@ -17,15 +17,16 @@ android {
     }
 
     signingConfigs {
+        // 签名步骤1
         debug {
-            storeFile file('D:\\TestDemo\\keystore\\keystore.jks')//签名文件路径
+            storeFile file('../keystore/keystore.jks')//签名文件路径
             storePassword "zhu123456"
             keyAlias "key0"
             keyPassword "zhu123456"  //签名密码
             println("====== signingConfigs.debug ======")
         }
         release {
-            storeFile file('D:\\TestDemo\\keystore\\keystore.jks')//签名文件路径
+            storeFile file('../keystore/keystore.jks')//签名文件路径
             storePassword "zhu123456"
             keyAlias "key0"
             keyPassword "zhu123456"  //签名密码
@@ -36,10 +37,12 @@ android {
     buildTypes {
         debug {
             println("====== buildTypes.debug ======")
+            // 签名步骤2
             signingConfig signingConfigs.debug
         }
         release {
             minifyEnabled false
+            // 签名步骤2
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 
